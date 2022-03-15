@@ -1,0 +1,28 @@
+#navegacion{
+    
+    background-color: rgba(211, 250, 37, 0.5);        
+
+}
+#navegacion h1{
+    font-size: 20px;
+}
+#navegacion div{
+    margin: 0 auto;
+    max-width: 30%;
+}
+
+#navegacion ul{
+    width:auto;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+}
+#navegacion li{
+    margin-top: auto;
+    line-height: 44px;
+    display: flex;
+    vertical-align: top; 
+}
+#icononav{
+    margin: 8px 0px;
+}
