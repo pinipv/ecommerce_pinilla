@@ -64,7 +64,11 @@ const ItemCount=(props)=>{
 
     
     if(max){    
-            return(<h3>No queda stock</h3>)
+            return(
+            <div style={{display:"flex"}}>
+                <h3>No queda stock</h3>
+                <Link id="alcarro"to="/cart">Vamos al carrito</Link>
+            </div>)
     }
     else{
             return(<>
@@ -83,7 +87,7 @@ const ItemCount=(props)=>{
                         <button id="eliminar" onClick={(Eliminar)}>Eliminar</button>
                         <button id="agregar" onClick={Agregar}>Añadir</button>
                     </div>
-                    <button id="alcarro"><Link id="allink"to="/carrito">Vamos al carrito</Link></button>
+                    <Link id="alcarro"to="/cart">Vamos al carrito</Link>
                     
                 </div>
             </>)

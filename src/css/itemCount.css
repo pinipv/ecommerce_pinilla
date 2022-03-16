@@ -88,21 +88,20 @@
 
 #alcarro{
     
-    height: 50px;
+    height: 30px;
     cursor: pointer;
-    align-items: center;
+    padding-top:10px;
     border: none;
     border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
     background-color:rgb(139, 182, 223);     
     text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold; 
 }
 
 #alcarro:hover{
     background-color: rgb(62, 182, 237);
 }
-#allink{
-    text-decoration: none;
-    color: white;
-    font-weight: bold; 
-}
+

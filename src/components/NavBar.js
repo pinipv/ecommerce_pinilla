@@ -23,7 +23,7 @@ const NavBar=(props)=> {
                 <li> <NavLink to="/categoria/jewelery" className='nav__link'>Joyas</NavLink></li>
                 <li> <NavLink to="/categoria/men's clothing" className='nav__link'>Ropa de hombre</NavLink></li>
                 <li> <NavLink to="/categoria/women's clothing" className='nav__link'>Ropa de mujer</NavLink></li>
-                <li> <Link to="/carrito"><CartWidget/></Link><p>{props.estado}</p></li>
+                <li> <Link to="/cart"><CartWidget/></Link><p>{props.estado}</p></li>
             </ul>
                 
             </div>

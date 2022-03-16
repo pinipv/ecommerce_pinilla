@@ -11,7 +11,7 @@ const Main = ({onAdd,state}) => {
                 <Route path="/" element={<ItemListContainer/>} />
                 <Route path="/categoria/:idCategoria" element={<ItemListContainer/>} />
                 <Route path="/producto/:idProducto" element={<ItemDetailContainer onAdd={onAdd} state={state} />} />
-                <Route path="/carrito" element={<Carrito/>} />
+                <Route path="/cart" element={<Carrito/>} />
             </Routes>
         </Container>
     );
