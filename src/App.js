@@ -21,10 +21,7 @@ const App=()=> {
     
             <BrowserRouter>    
                 <Header estado={state}/>   
-                <Main funcion={setState} max={5} state={state}/>   
-                
-                
-                
+                <Main onAdd={setState}state={state}/>   
                 <Footer/>
                 <ToastContainer/>
             </BrowserRouter>

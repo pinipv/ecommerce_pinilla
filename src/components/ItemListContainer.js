@@ -28,6 +28,7 @@ const ItemListContainer=()=>{
         .then((resultado)=>{
             setItems(resultado)
             
+            
         })
         .catch(()=>{
             toast.error("Error al cargar los productos")

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = ({funcion, max,state}) => {
+const ItemDetailContainer = ({onAdd,state}) => {
 
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ const ItemDetailContainer = ({funcion, max,state}) => {
     return <h1>Cargando...</h1>
   }else{
     return (
-      <ItemDetail item={item} funcion={funcion} max={max} state={state}/>
+      <ItemDetail item={item} onAdd={onAdd} state={state}/>
     )
   }
 }
