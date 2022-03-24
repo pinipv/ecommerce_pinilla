@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 import {useState} from "react"
-
+import MiProvider from './components/CartContext'
 
 
 
@@ -18,16 +18,19 @@ import {BrowserRouter}from 'react-router-dom'
 const App=()=> {
  const [state,setState]=useState(0)
     return  (
-    
-            <BrowserRouter>    
-                <Header estado={state}/>   
-                <Main onAdd={setState}state={state}/>   
-                <Footer/>
-                <ToastContainer/>
-            </BrowserRouter>
-            
+                     
+                <BrowserRouter> 
+                    <MiProvider  onAdd={setState}> 
+                        <Header estado={state} />   
+                        <Main state={state} onAdd={setState}/> 
+                    </MiProvider>  
+                    <Footer/>
+                    <ToastContainer/>
+                </BrowserRouter>
+        
                 ) 
 }
 
 
 export default App
+

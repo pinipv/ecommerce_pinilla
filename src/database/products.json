@@ -1,0 +1,42 @@
+[{
+    "id": 1,
+    "title": "Camisa",
+    "description": "Donec ex nisi, finibus vel condimentum ac, scelerisque id turpis. Aliquam vitae iaculis nunc. Curabitur vehicula, dolor dapibus hendrerit egestas, augue nunc venenatis turpis, a condimentum lorem lacus nec massa. Integer eleifend, ipsum a mattis dictum, tellus augue bibendum odio, a tincidunt massa purus id urna. Vivamus sapien lectus, sollicitudin in accumsan ut, luctus eget sem. Suspendisse eleifend consectetur magna. Morbi suscipit erat non varius ornare. Aliquam sodales leo ac nulla faucibus, id lobortis nibh efficitur. Pellentesque in tempus augue, non pulvinar nisl. Nulla id mauris purus. Aliquam dignissim, lacus ut hendrerit suscipit, felis ex consectetur lorem, nec elementum magna urna quis nunc. Aenean et metus sit amet nibh elementum semper eu ut enim. Fusce pellentesque augue vitae pharetra mollis.",
+    "price": 4.55,
+    "category": "ropa_hombre",
+    "imageUrl": "/img/greyman.jpg",
+    "stock": 67
+  }, {
+    "id": 2,
+    "title": "Pantalones",
+    "description": "Donec ex nisi, finibus vel condimentum ac, scelerisque id turpis. Aliquam vitae iaculis nunc. Curabitur vehicula, dolor dapibus hendrerit egestas, augue nunc venenatis turpis, a condimentum lorem lacus nec massa. Integer eleifend, ipsum a mattis dictum, tellus augue bibendum odio, a tincidunt massa purus id urna. Vivamus sapien lectus, sollicitudin in accumsan ut, luctus eget sem. Suspendisse eleifend consectetur magna. Morbi suscipit erat non varius ornare. Aliquam sodales leo ac nulla faucibus, id lobortis nibh efficitur. Pellentesque in tempus augue, non pulvinar nisl. Nulla id mauris purus. Aliquam dignissim, lacus ut hendrerit suscipit, felis ex consectetur lorem, nec elementum magna urna quis nunc. Aenean et metus sit amet nibh elementum semper eu ut enim. Fusce pellentesque augue vitae pharetra mollis.",
+    "price": 22.4,
+    "category": "ropahombre",
+    "imageUrl": "/img/greyman.jpg",
+    "stock": 42
+  }, {
+    "id": 3,
+    "title": "Ordenador",
+    "description": "Donec ex nisi, finibus vel condimentum ac, scelerisque id turpis. Aliquam vitae iaculis nunc. Curabitur vehicula, dolor dapibus hendrerit egestas, augue nunc venenatis turpis, a condimentum lorem lacus nec massa. Integer eleifend, ipsum a mattis dictum, tellus augue bibendum odio, a tincidunt massa purus id urna. Vivamus sapien lectus, sollicitudin in accumsan ut, luctus eget sem. Suspendisse eleifend consectetur magna. Morbi suscipit erat non varius ornare. Aliquam sodales leo ac nulla faucibus, id lobortis nibh efficitur. Pellentesque in tempus augue, non pulvinar nisl. Nulla id mauris purus. Aliquam dignissim, lacus ut hendrerit suscipit, felis ex consectetur lorem, nec elementum magna urna quis nunc. Aenean et metus sit amet nibh elementum semper eu ut enim. Fusce pellentesque augue vitae pharetra mollis.",
+    "price": 1299.99,
+    "category": "tecnologia",
+    "imageUrl": "/img/greyman.jpg",
+    "stock": 35
+  }, {
+    "id": 4,
+    "title": "Reloj clasico",
+    "description": "Donec ex nisi, finibus vel condimentum ac, scelerisque id turpis. Aliquam vitae iaculis nunc. Curabitur vehicula, dolor dapibus hendrerit egestas, augue nunc venenatis turpis, a condimentum lorem lacus nec massa. Integer eleifend, ipsum a mattis dictum, tellus augue bibendum odio, a tincidunt massa purus id urna. Vivamus sapien lectus, sollicitudin in accumsan ut, luctus eget sem. Suspendisse eleifend consectetur magna. Morbi suscipit erat non varius ornare. Aliquam sodales leo ac nulla faucibus, id lobortis nibh efficitur. Pellentesque in tempus augue, non pulvinar nisl. Nulla id mauris purus. Aliquam dignissim, lacus ut hendrerit suscipit, felis ex consectetur lorem, nec elementum magna urna quis nunc. Aenean et metus sit amet nibh elementum semper eu ut enim. Fusce pellentesque augue vitae pharetra mollis.",
+    "price": 499.99,
+    "category": "accesorios",
+    "imageUrl": "/img/greyman.jpg",
+    "stock": 3
+  }, {
+    "id": 5,
+    "title": "Libro",
+    "description": "Donec ex nisi, finibus vel condimentum ac, scelerisque id turpis. Aliquam vitae iaculis nunc. Curabitur vehicula, dolor dapibus hendrerit egestas, augue nunc venenatis turpis, a condimentum lorem lacus nec massa. Integer eleifend, ipsum a mattis dictum, tellus augue bibendum odio, a tincidunt massa purus id urna. Vivamus sapien lectus, sollicitudin in accumsan ut, luctus eget sem. Suspendisse eleifend consectetur magna. Morbi suscipit erat non varius ornare. Aliquam sodales leo ac nulla faucibus, id lobortis nibh efficitur. Pellentesque in tempus augue, non pulvinar nisl. Nulla id mauris purus. Aliquam dignissim, lacus ut hendrerit suscipit, felis ex consectetur lorem, nec elementum magna urna quis nunc. Aenean et metus sit amet nibh elementum semper eu ut enim. Fusce pellentesque augue vitae pharetra mollis.",
+    "price": 17.99,
+    "category": "ocio",
+    "imageUrl": "/img/greyman.jpg",
+    "stock": 35
+  }]
+  

@@ -20,6 +20,8 @@ import "./css/navBar.css"
 import "./css/itemCount.css"
 import "./css/item.css"
 import 'react-toastify/dist/ReactToastify.css';
+
+import 'bootstrap/dist/css/bootstrap.css';
 //Tercera linea
 
 //const App=()=>{return "Hola Mundo"}

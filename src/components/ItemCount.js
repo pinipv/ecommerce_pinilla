@@ -1,13 +1,27 @@
 import {React,useState,useEffect} from "react"
 import { Link} from "react-router-dom";
-
+import { useContext } from "react";
+import { contexto } from "./CartContext";
 
 
 
 const ItemCount=(props)=>{
+
+
+
+    const context=useContext(contexto)
+
+    const anadir=context.addItem
+
+
+
     const estado=props.state
     var stock= props.max
     const setEstado=props.onAdd
+
+
+
+    const item=props.item
     
     const [estado_bajo, setState]=useState(1)
     const [max,setMax]=useState(false)
@@ -40,6 +54,13 @@ const ItemCount=(props)=>{
     }
 
     const Agregar=()=>{
+
+
+        console.log(item)
+        anadir(item,estado_bajo)
+        console.log(context)
+
+
         if(almacen>=estado_bajo){
             setEstado(estado+estado_bajo)
             

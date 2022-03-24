@@ -89,5 +89,13 @@
     cursor:pointer;
 }
 
+#tit-card{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;}
 
-    
+
+ #link-detalle{
+     text-decoration:none;
+     
+ }   

@@ -4,30 +4,35 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar=(props)=> {
     return (<>
-        <div id="navegacion">
-            <div>
-            <ul>
-                <li><a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" id="icononav" className="icon icon-tabler icon-tabler-search" width="28" height="28" viewBox="0 0 24 24" strokeWidth="1" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <circle cx="10" cy="10" r="7" />
-                            <line x1="21" y1="21" x2="15" y2="15" />
-                        </svg>
-                    </a>
-                </li>  
-                <li><Link to="/">
-                        <h1 className='header__title'>Mi E-Commerce</h1>
-                    </Link>
-                </li>
-                <li> <NavLink to="/categoria/electronics" className='nav__link'>Tecnologia</NavLink></li>
-                <li> <NavLink to="/categoria/jewelery" className='nav__link'>Joyas</NavLink></li>
-                <li> <NavLink to="/categoria/men's clothing" className='nav__link'>Ropa de hombre</NavLink></li>
-                <li> <NavLink to="/categoria/women's clothing" className='nav__link'>Ropa de mujer</NavLink></li>
-                <li> <Link to="/cart"><CartWidget/></Link><p>{props.estado}</p></li>
-            </ul>
-                
-            </div>
-        </div>
+       
+       
+                    
+                    
+                    <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+                            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-2">
+                                <li> <NavLink to="/" className='nav-link px-2 text-white'>E-Commerce</NavLink></li>
+                                <li> <NavLink to="/categoria/electronics" className='nav-link px-2 text-white'>Tecnologia</NavLink></li>
+                                <li> <NavLink to="/categoria/jewelery" className='nav-link px-2 text-white'>Joyas</NavLink></li>
+                                <li> <NavLink to="/categoria/men's clothing" className='nav-link px-2 text-white'>Ropa de hombre</NavLink></li>
+                                <li> <NavLink to="/categoria/women's clothing" className='nav-link px-2 text-white'>Ropa de mujer</NavLink></li>
+                            </ul>
+                        
+
+
+                        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        <input type="search" className="form-control form-control-dark" placeholder="Search..." aria-label="Search"></input>
+                        </form>
+
+                        <div className="text-end d-flex">
+                        <button type="button" className="btn btn-outline-light me-2">Login</button>
+                        <button type="button" className="btn btn-warning me-4">Sign-up</button>
+                        <li className="d-flex"> <Link to="/cart" className=""><CartWidget/></Link><p className="mt-2 ms-2">{props.estado}</p></li>
+                        </div>
+                    
+                    </div>
+  
+
+
     </>)
 }
 export default NavBar
