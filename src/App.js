@@ -20,7 +20,7 @@ const App=()=> {
     return  (
                      
                 <BrowserRouter> 
-                    <MiProvider  onAdd={setState}> 
+                    <MiProvider  onAdd={setState} state={state}> 
                         <Header estado={state} />   
                         <Main state={state} onAdd={setState}/> 
                     </MiProvider>  

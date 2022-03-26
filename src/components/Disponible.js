@@ -34,7 +34,7 @@ const Disponible = (props)=> {
         var valor = document.getElementById('input-qty').value;
 
         if(almacen>=estado_bajo){
-            setEstado(estado+estado_bajo)
+            
             
             
             setAl(almacen-estado_bajo)
@@ -43,6 +43,7 @@ const Disponible = (props)=> {
                 sumar(item.id,valor)
             }else  if(found==false){
                 anadir(item,valor)
+                setEstado(estado+estado_bajo)
             }
             
         }else{     
@@ -74,7 +75,7 @@ const Disponible = (props)=> {
             <div className="form-group row mb-4">
                     <label  className="col-sm-3 col-md-3 form-control-label">Cantidad:</label>
                     <div className="col-sm-8 col-md-9">
-                        <input type="number" className="qty form-control" id="input-qty" name="qty" min="1" value="1" max={props.item.stock} placeholder="1"></input>
+                        <input type="number" className="qty form-control" id="input-qty" name="qty" min="1" value="1" max={props.item.stock} placeholder="1" readOnly></input>
                     </div>
             </div>
 

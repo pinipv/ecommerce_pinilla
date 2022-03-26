@@ -6,24 +6,22 @@ import { contexto } from "./CartContext";
 import { Link} from "react-router-dom";
 
 
-const Carrito = ()=> {
+const Carrito = (props)=> {
 
+
+    
 
     const context=useContext(contexto)
 
     const lista=context.carrito
     
-    const total=context.total
-
-    const [b,setBorrar]=useState()
+  
 
     function borrar(id){
         console.log("eo")
     }
 
-    useEffect(()=>{
-        console.log(b)
-    },[b]);
+    
 
 
 
@@ -39,7 +37,7 @@ const Carrito = ()=> {
                                     <h4>Cantidad:</h4>
                                     <p className="mx-3 pt-2 pb-2">{item.cantidad}</p>
                                 </div>
-                                <button id={item.producto.id} onClick={context.borrar}>Eliminar</button>
+                                <button id={item.producto.id} onClick={()=>context.removeItem(item.producto.id,props.onAdd,props.state)}>Eliminar</button>
                                 
                             </div>
 
@@ -53,7 +51,7 @@ const Carrito = ()=> {
                     )
             })}
 
-            <button onClick={context.clear}>Vaciar carrito</button>     
+            <button onClick={()=>context.clear(props.onAdd)}>Vaciar carrito</button>     
           
         </> 
         

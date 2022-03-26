@@ -13,7 +13,7 @@ const MiProvider=({children})=>{
     //Siempre que se quiera modificar un estado siendo este array u objeto. Primero hay que copiarlo
                     //  const copia=carrito.slice(inicio,fin)  ==>array /////// const copia=carrito.
                     //   ahora se modificaria copia y se setearia con setCarrito(arraynfin(copia))
-   
+    
     const [total,setTotal]=useState(0)
 
     const addItem=(producto,numero)=>{
@@ -22,19 +22,26 @@ const MiProvider=({children})=>{
         setTotal(total+numero)
     }
 
-    const removeItem=(id)=>{
-    
-    }
-    const clear=()=>{
-        setCarrito([])
+    const removeItem=(id,onAdd,state)=>{
         
+
+        
+        const copiaCarrito=[...carrito]
+        console.log(carrito)
+        const nuevo=copiaCarrito.filter(prod =>prod.producto.id !=id);
+        setCarrito(nuevo)
+        onAdd(state-1)
+    }
+    const clear=(onAdd)=>{
+        setCarrito([])
         setTotal(0)
+        onAdd(0)
     }
     const isInCart =(id)=>{
 
         return carrito.some(item =>item.producto.id==id)
     }
-    const sumar=(id,valor)=>{       //el valor se ha quedado en espera de que se me ocurra como hacerlo bien
+    const sumar=(id)=>{      
         carrito.forEach(function(elemento, i) {
             console.log(elemento, i);
             if(elemento.producto.id==id){
@@ -49,20 +56,6 @@ const MiProvider=({children})=>{
             }
         })
     }
-    const borrar=(btn)=>{
-        console.log(btn.target.id)
-        const copiaCarrito=[...carrito]
-        const index=carrito.findIndex(prod =>prod.id ===btn.target.id);
-
-        copiaCarrito.splice(index,1);
-        console.log(copiaCarrito)
-
-        var arr = [1, 2, 3, 4];
-        var greater = remove(arr, function(n) { return n > 2;});
-        console.log(arr)
-    }
-
-    
 
 
     const valorContexto={
@@ -72,8 +65,8 @@ const MiProvider=({children})=>{
         removeItem,
         clear,
         isInCart,
-        sumar,
-        borrar        
+        sumar
+                
     }
     return (
         <Provider value={valorContexto}>
