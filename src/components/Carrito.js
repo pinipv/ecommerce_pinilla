@@ -14,18 +14,16 @@ const Carrito = (props)=> {
     const context=useContext(contexto)
 
     const lista=context.carrito
-    
-  
-
-    function borrar(id){
-        console.log("eo")
-    }
-
-    
+    const precio=context.preciofinal
 
 
+    if(lista.length==0){return(<>
+        <h1>No tienes nada aun</h1>
+        <button type="button" className="btn btn-sm btn-outline-primary "><Link id="link-detalle"to={`/`}>Seguir comprando</Link></button>
+        </>
 
-
+        )
+    }else{
     return (
         <>
             {lista.map((item)=>{
@@ -37,7 +35,7 @@ const Carrito = (props)=> {
                                     <h4>Cantidad:</h4>
                                     <p className="mx-3 pt-2 pb-2">{item.cantidad}</p>
                                 </div>
-                                <button id={item.producto.id} onClick={()=>context.removeItem(item.producto.id,props.onAdd,props.state)}>Eliminar</button>
+                                <button id={item.producto.id} onClick={()=>context.removeItem(item.producto.id,props.onAdd,props.state,item.cantidad,item.producto.price)}>Eliminar</button>
                                 
                             </div>
 
@@ -50,11 +48,12 @@ const Carrito = (props)=> {
                          </>
                     )
             })}
-
+            <h4>El total por sus productos es de: {precio}</h4>
             <button onClick={()=>context.clear(props.onAdd)}>Vaciar carrito</button>     
           
         </> 
         
     )
+}
 }
 export default Carrito

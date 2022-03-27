@@ -5,6 +5,8 @@ import {React,useState} from "react"
 import { useContext } from "react";
 import { contexto } from "./CartContext";
 
+import { Link, NavLink } from "react-router-dom";
+
 const Disponible = (props)=> {
 
     const context=useContext(contexto)
@@ -40,9 +42,10 @@ const Disponible = (props)=> {
             setAl(almacen-estado_bajo)
             const found= context.isInCart(item.id)
             if(found==true){
-                sumar(item.id,valor)
-            }else  if(found==false){
-                anadir(item,valor)
+                sumar(item.id,valor,item.price)
+                setEstado(estado+estado_bajo)
+            }else if(found==false){
+                anadir(item,valor,item.price)
                 setEstado(estado+estado_bajo)
             }
             
@@ -85,6 +88,7 @@ const Disponible = (props)=> {
                     <h3>En Stock</h3>  
                     <input type="button" className="adc btn btn-primary" value="Añadir al carrito" onClick={Agregar}></input>
                     <a href="javascript:history.back()" className="btn btn-link btn-sm" title="Continue Shopping">← Continuar comprando</a>
+                    <li className="d-flex"> <Link to="/cart" className="">Finalizar Compra</Link></li>
                 </div>
             </div>
             <div className="form-group row">
@@ -102,6 +106,7 @@ const Disponible = (props)=> {
                     <p>This product has run out of stock. You may send us an inquiry about it.</p>
                     <a href="/contact" className="btn btn-secondary btn-sm" title="Contact Us">Contact Us</a>
                     <a href="javascript:history.back()" className="btn btn-link btn-sm" title="← or Continue Shopping">← or Continue Shopping</a>
+                    <li className="d-flex"> <Link to="/cart" className="">Finalizar Compra</Link></li>
                 </div>
             </div>
 

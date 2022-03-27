@@ -9,6 +9,7 @@ const { Provider } = contexto
 const MiProvider=({children})=>{
 
     const [carrito,setCarrito]=useState([])
+    const [preciofinal,setPrecio]=useState(0)
 
     //Siempre que se quiera modificar un estado siendo este array u objeto. Primero hay que copiarlo
                     //  const copia=carrito.slice(inicio,fin)  ==>array /////// const copia=carrito.
@@ -16,40 +17,44 @@ const MiProvider=({children})=>{
     
     const [total,setTotal]=useState(0)
 
-    const addItem=(producto,numero)=>{
+    const addItem=(producto,numero,precio)=>{
         setCarrito(carrito.concat({producto:producto,cantidad:numero}))
-        
+        setPrecio(preciofinal+(numero*precio))
         setTotal(total+numero)
     }
 
-    const removeItem=(id,onAdd,state)=>{
+    const removeItem=(id,onAdd,state,cantidad,precio)=>{
         
 
         
         const copiaCarrito=[...carrito]
-        console.log(carrito)
+        
         const nuevo=copiaCarrito.filter(prod =>prod.producto.id !=id);
+        setPrecio(preciofinal-(cantidad*precio))
         setCarrito(nuevo)
-        onAdd(state-1)
+        onAdd(state-cantidad)
+        
+
     }
     const clear=(onAdd)=>{
         setCarrito([])
         setTotal(0)
+        setPrecio(0)
         onAdd(0)
     }
     const isInCart =(id)=>{
 
         return carrito.some(item =>item.producto.id==id)
     }
-    const sumar=(id)=>{      
+    const sumar=(id,numero,precio)=>{      
         carrito.forEach(function(elemento, i) {
-            console.log(elemento, i);
+            
             if(elemento.producto.id==id){
                 var new_carrito= [].concat(carrito)
-                
                 new_carrito[i].cantidad++
-                
                 setCarrito(new_carrito)
+                setPrecio(preciofinal+(numero*precio))
+                
 
             }else{
                 
@@ -65,7 +70,8 @@ const MiProvider=({children})=>{
         removeItem,
         clear,
         isInCart,
-        sumar
+        sumar,
+        preciofinal
                 
     }
     return (
