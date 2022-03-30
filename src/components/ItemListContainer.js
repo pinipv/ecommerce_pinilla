@@ -4,8 +4,8 @@ import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import {toast} from "react-toastify"
 
-//// Creamos una promesa que nos devuelva los datos de la "base de datos"
-////Simulamos la demora de solicitar datos a la red, demoradno 500 ms la promesa usando setTimeout()
+import { db } from "../firebase"
+import { collection,getDocs,query,where } from "firebase/firestore"
 
 const ItemListContainer=()=>{
     
@@ -13,18 +13,49 @@ const ItemListContainer=()=>{
     const [items,setItems]=useState([])     ////Se inicializa como array para que en caso de no llegar datos a la hora
                                             ///// de hacerle map en itemlist.js lo haga sobre un array y no  sobre undefined
     const {idCategoria} = useParams()
-    var url="";
-    useEffect(()=>{
-        setLoading(true);
+    /*var url="";*/
+   
+
+            useEffect(() => {
+
+                if(!idCategoria){
+        
+                    const productosCollection = collection(db, "productos")
+                    const consulta = getDocs(productosCollection)
+            
+                    consulta
+                        .then(res => setItems(res.docs.map(doc => doc.data())))
+                        //.then(res => setProductos(res.docs.map(doc => ({id: doc.id, ...doc.data()} ))))
+                        .catch(() => toast.error("Error al cargar los productos"))
+                        .finally(() => setLoading(false))
+        
+                }else{
+        
+                    const productosCollection = collection(db, "productos")
+                    const filtro = query(productosCollection,where("category","==",idCategoria))
+                    const pedido = getDocs(filtro)
+        
+                    pedido
+                        .then(res => setItems(res.docs.map(doc => doc.data())))
+                        //.then(res => setProductos(res.docs.map(doc => ({id: doc.id, ...doc.data()} ))))
+                        .catch(() => toast.error("Error al cargar los productos"))
+                        .finally(() => setLoading(false))
+        
+                }
+        
+        
+            }, [idCategoria])
+
+       /* setLoading(true);
         if(idCategoria== null){
             url='https://fakestoreapi.com/products';
         }else{
             url='https://fakestoreapi.com/products/category/'+idCategoria;
-        }
+        }*/
 
 
         //fetch('/products.json') 
-        fetch(url)
+      /*  fetch(url)
         .then((response)=>{             /////////////Devuelve un promise, no los productos
             return response.json()
         })
@@ -38,8 +69,8 @@ const ItemListContainer=()=>{
         })
         .finally(()=>{
             setLoading(false);
-        })           
-    },[idCategoria]);
+        })   */        
+   
     
     
 
@@ -86,9 +117,11 @@ const ItemListContainer=()=>{
         }
 
         
+    }
+        
         
     
     
-    }
+    
 
 export default ItemListContainer  

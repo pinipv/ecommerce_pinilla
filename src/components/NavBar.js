@@ -24,10 +24,10 @@ const NavBar=(props)=> {
                             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
                                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-2">
                                         <li> <NavLink to="/" className='nav-link px-2 text-white'>E-Commerce</NavLink></li>
-                                        <li> <NavLink to="/categoria/electronics" className='nav-link px-2 text-white'>Tecnologia</NavLink></li>
-                                        <li> <NavLink to="/categoria/jewelery" className='nav-link px-2 text-white'>Joyas</NavLink></li>
-                                        <li> <NavLink to="/categoria/men's clothing" className='nav-link px-2 text-white'>Ropa de hombre</NavLink></li>
-                                        <li> <NavLink to="/categoria/women's clothing" className='nav-link px-2 text-white'>Ropa de mujer</NavLink></li>
+                                        <li> <NavLink to="/categoria/electronica" className='nav-link px-2 text-white'>Tecnologia</NavLink></li>
+                                        <li> <NavLink to="/categoria/joyeria" className='nav-link px-2 text-white'>Joyas</NavLink></li>
+                                        <li> <NavLink to="/categoria/ropa_hombre" className='nav-link px-2 text-white'>Ropa de hombre</NavLink></li>
+                                        <li> <NavLink to="/categoria/ropa_mujer" className='nav-link px-2 text-white'>Ropa de mujer</NavLink></li>
                                     </ul>
                                 
                                 <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -48,8 +48,8 @@ const NavBar=(props)=> {
                                             <li> <NavLink to="/" className='nav-link px-2 text-white'>E-Commerce</NavLink></li>
                                             <li> <NavLink to="/categoria/electronics" className='nav-link px-2 text-white'>Tecnologia</NavLink></li>
                                             <li> <NavLink to="/categoria/jewelery" className='nav-link px-2 text-white'>Joyas</NavLink></li>
-                                            <li> <NavLink to="/categoria/men's clothing" className='nav-link px-2 text-white'>Ropa de hombre</NavLink></li>
-                                            <li> <NavLink to="/categoria/women's clothing" className='nav-link px-2 text-white'>Ropa de mujer</NavLink></li>
+                                            <li> <NavLink to="/categoria/ropa_hombre" className='nav-link px-2 text-white'>Ropa de hombre</NavLink></li>
+                                            <li> <NavLink to="/categoria/ropa_mujer" className='nav-link px-2 text-white'>Ropa de mujer</NavLink></li>
                                         </ul>
                                     
                                     <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

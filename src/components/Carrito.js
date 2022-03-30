@@ -5,6 +5,8 @@ import { contexto } from "./CartContext";
 
 import { Link} from "react-router-dom";
 
+import { db } from "../firebase"
+
 
 const Carrito = (props)=> {
 
