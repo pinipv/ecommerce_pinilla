@@ -5,7 +5,9 @@ import { contexto } from "./CartContext";
 
 import { Link} from "react-router-dom";
 
-import { db } from "../firebase"
+import { db} from "../firebase"
+import { serverTimestamp,collection, addDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 
 const Carrito = (props)=> {
@@ -17,6 +19,30 @@ const Carrito = (props)=> {
 
     const lista=context.carrito
     const precio=context.preciofinal
+
+    const terminarCompra=()=>{
+        const orden={
+            buyer:  {
+                nombre:"Adrian",
+                telefono:"123454234",
+                email:"adri@adrian.com"
+            },
+            items:lista,
+            date: serverTimestamp(),
+            total:precio
+
+        }
+        const ordenesCollection=collection(db,"ordenes")
+        const pedido=addDoc(ordenesCollection,orden)
+
+        pedido
+            .then(res=>{
+                toast.info("Finalizo la compra")
+            })
+            .catch(error=>{
+                toast.error("hubo un error")
+            })
+    }
 
 
     if(lista.length==0){return(<>
@@ -51,7 +77,8 @@ const Carrito = (props)=> {
                     )
             })}
             <h4>El total por sus productos es de: {precio}</h4>
-            <button onClick={()=>context.clear(props.onAdd)}>Vaciar carrito</button>     
+            <button onClick={()=>context.clear(props.onAdd)}>Vaciar carrito</button>  
+            <button onClick={terminarCompra}> Terminar compra</button>     
           
         </> 
         
