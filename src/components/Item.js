@@ -7,7 +7,7 @@ const Item=({producto})=>{
         
         <div  className="col" height="800">
         <div className="card shadow-sm">
-            <img src={producto.image} className="bd-placeholder-img card-img-top" width="100%" height="350" ></img>
+            <img src={producto.imageUrl} className="bd-placeholder-img card-img-top" width="100%" height="350" ></img>
 
             <div className="card-body">
                 <h2 id="tit-card">{producto.title}</h2>
@@ -28,5 +28,3 @@ const Item=({producto})=>{
     )
 }
 export default Item
-
-/////id,title,price,pictureUrl

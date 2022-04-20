@@ -1,7 +1,4 @@
 import {createContext, useState} from 'react'
-
-
-
 export const contexto=createContext()
 
 const { Provider } = contexto
@@ -11,9 +8,6 @@ const MiProvider=({children})=>{
     const [carrito,setCarrito]=useState([])
     const [preciofinal,setPrecio]=useState(0)
 
-    //Siempre que se quiera modificar un estado siendo este array u objeto. Primero hay que copiarlo
-                    //  const copia=carrito.slice(inicio,fin)  ==>array /////// const copia=carrito.
-                    //   ahora se modificaria copia y se setearia con setCarrito(arraynfin(copia))
     
     const [total,setTotal]=useState(0)
 

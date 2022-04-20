@@ -10,35 +10,20 @@ import { Link, NavLink } from "react-router-dom";
 const Disponible = (props)=> {
 
     const context=useContext(contexto)
-
     const anadir=context.addItem
     const sumar=context.sumar
-
-
     const estado=props.state
-    var stock= props.max
     const setEstado=props.onAdd
-
-
-
     const item=props.item
-    
-    const [estado_bajo, setState]=useState(1)
-    const [max,setMax]=useState(false)
-    
+    const [estado_bajo]=useState(1)
+    const [setMax]=useState(false)
     const [almacen,setAl]=useState(props.max)
-    
-
-
 
     const Agregar=()=>{
 
         var valor = document.getElementById('input-qty').value;
 
-        if(almacen>=estado_bajo){
-            
-            
-            
+        if(almacen>=estado_bajo){ 
             setAl(almacen-estado_bajo)
             const found= context.isInCart(item.id)
             if(found==true){
@@ -48,22 +33,13 @@ const Disponible = (props)=> {
                 anadir(item,valor,item.price)
                 setEstado(estado+estado_bajo)
             }
-            
         }else{     
             setEstado(estado+almacen) 
             setMax(true)
             alert("Se ha añadido lo maximo posible debido a la falta de stock. Le ruego compruebe la cantidad final.(Esto se cambiara por una 'alerta' dentro del contador)")
-            //setMax(true)
-            
+            //setMax(true)  
         }
-        
-        
-        
-
-        
     }
-
-
 
     if(props.disp){
         return (<>
@@ -87,7 +63,6 @@ const Disponible = (props)=> {
                 <div className="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3"> 
                     <h3>En Stock</h3>  
                     <input type="button" className="adc btn btn-primary" value="Añadir al carrito" onClick={Agregar}></input>
-                    <a href="javascript:history.back()" className="btn btn-link btn-sm" title="Continue Shopping">← Continuar comprando</a>
                     <li className="d-flex"> <Link to="/cart" className="">Finalizar Compra</Link></li>
                 </div>
             </div>
@@ -115,12 +90,3 @@ const Disponible = (props)=> {
     
 }
 export default Disponible
-
-
-
-
-
-
-
-
-            

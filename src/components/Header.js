@@ -1,9 +1,6 @@
-import {React, useEffect} from "react"
+import {React} from "react"
 import NavBar from "./NavBar"
 const Header = (props)=> {
-
-    
-    
 
     return (
         <header className="p-3 bg-dark text-white shadow-lg p-3 mb-5 rounded">

@@ -1,4 +1,4 @@
-import{React,useEffect,useState} from "react"
+import{React} from "react"
 
 import { useContext } from "react";
 import { contexto } from "./CartContext";
@@ -11,10 +11,6 @@ import { toast } from "react-toastify";
 
 
 const Carrito = (props)=> {
-
-
-    
-
     const context=useContext(contexto)
 
     const lista=context.carrito
@@ -67,19 +63,13 @@ const Carrito = (props)=> {
                                 
                             </div>
 
-                            <div className="col-2">
-                                <h4>Soy el otro lado</h4>
-                                
-                            </div>
-                           
                         </div>
-                         </>
+                    </>
                     )
             })}
             <h4>El total por sus productos es de: {precio}</h4>
             <button onClick={()=>context.clear(props.onAdd)}>Vaciar carrito</button>  
             <button onClick={terminarCompra}> Terminar compra</button>     
-          
         </> 
         
     )

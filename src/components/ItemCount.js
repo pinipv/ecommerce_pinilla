@@ -7,22 +7,12 @@ import { contexto } from "./CartContext";
 
 const ItemCount=(props)=>{
 
-
-
     const context=useContext(contexto)
-
     const anadir=context.addItem
-
-
-
     const estado=props.state
     var stock= props.max
     const setEstado=props.onAdd
-
-
-
     const item=props.item
-    
     const [estado_bajo, setState]=useState(1)
     const [max,setMax]=useState(false)
     const [cantidad,setCantidad]=useState(0)
